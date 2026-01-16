@@ -1,0 +1,214 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section h1 {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-section h2 {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-section p {
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.hero-section .d-flex {
+  animation: fadeInUp 1.6s ease-out;
+}
+
+/* Social Links */
+.social-links a {
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0d6efd !important;
+  transform: translateY(-5px);
+}
+
+/* Profile Image */
+.profile-image-container img {
+  transition: transform 0.3s ease;
+  border: 5px solid #fff;
+}
+
+.profile-image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+}
+
+.underline {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Skills Section */
+.skill-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  background-color: #0d6efd !important;
+  color: white;
+}
+
+.skill-card:hover .skill-icon,
+.skill-card:hover h5 {
+  color: white !important;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 100px 0;
+}
+
+.cta-section .btn-light:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .profile-image-container img {
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-lg {
+    padding: 0.5rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .profile-image-container img {
+    max-width: 250px !important;
+  }
+  
+  .about-section,
+  .skills-section,
+  .cta-section {
+    padding: 60px 0;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button Transitions */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Cards */
+.project-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.project-card img {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Contact Page */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Active Link */
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
