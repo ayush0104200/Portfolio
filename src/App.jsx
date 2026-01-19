@@ -5,6 +5,10 @@ import About from './pages/About'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Blog from './pages/Blog'
+import Experience from './pages/Experience'
+import Testimonials from './pages/Testimonials'
+import Services from './pages/Services'
 import './App.css'
 
 
@@ -19,6 +23,10 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </Router>
   )
