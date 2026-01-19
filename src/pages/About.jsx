@@ -14,18 +14,18 @@ const About = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12 mb-4 mb-lg-0">
               <p className="lead">
-                I'm a front-end developer who crafts fast, responsive, and accessible interfaces.
-                I obsess over clean UI, intuitive interactions, and performance that feels effortless.
+                I'm a frontend developer focused on building
+                clean and responsive web interfaces.
               </p>
               <p>
-                My journey started with a curiosity for how pixels move on the web, and it grew into
-                a career focused on translating designs into reliable, maintainable code that works on
-                every device.
+                I enjoy working with React and JavaScript
+                and I’m currently looking for a frontend
+                developer internship where I can learn
+                and contribute to real projects.
               </p>
-              <p className="mt-4">
-                I specialize in modern front-end tools and patterns, keeping design systems consistent
-                while experimenting with tasteful motion and micro-interactions. The goal: interfaces
-                that look great and feel natural.
+              <p>
+                When I'm not coding, I'm probably
+                playing video games or watching movies.
               </p>
             </div>
             <div className="col-lg-6 col-md-12">
@@ -111,7 +111,7 @@ const About = () => {
                       <p className="text-muted">NR CREW | 2026 - Present</p>
                       <p>Built responsive UI with React and Bootstrap, improving performance and accessibility.</p>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const About = () => {
                       <p className="text-muted">Silver Oak University | 2026 - present</p>
                       <p>focuse on front-end web development.</p>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>

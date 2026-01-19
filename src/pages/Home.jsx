@@ -11,21 +11,21 @@ const Home = () => {
                     <div className="row align-items-center min-vh-100">
                         <div className="col-lg-6 col-md-12 mb-4 mb-lg-0">
                             <h1 className="display-3 fw-bold mb-3">
-                                Hi, I'm <span className="text-primary">Aayush</span>
+                                Hi, I'm <span className="text-primary"><br />Aayush Moradiya</span>
                             </h1>
                             <h2 className="display-6 text-muted mb-4">
-                                Frontend Developer
+                                Frontend Developer(React.js)
                             </h2>
                             <p className="lead mb-4">
-                                I create stunning web experiences with modern technologies.
-                                Passionate about building scalable applications and bringing ideas to life.
+                                I build responsive, user-friendly web applications
+                                using HTML, CSS, JavaScript, and React.
                             </p>
                             <div className="d-flex flex-wrap gap-3">
-                                <Link to="/contact" className="btn btn-primary btn-lg px-4 py-2">
-                                    Get In Touch
+                                <Link to="/projects" className="btn btn-primary btn-lg px-4 py-2">
+                                    View Projects
                                 </Link>
-                                <Link to="/projects" className="btn btn-outline-primary btn-lg px-4 py-2">
-                                    View My Work
+                                <Link to="/Aayush_Moradiya_Resume.pdf" className="btn btn-outline-primary btn-lg px-4 py-2">
+                                    Download Resume
                                 </Link>
                             </div>
                             {/* Social Links */}
@@ -39,7 +39,7 @@ const Home = () => {
                                 <a href="https://x.com/Aayush_Moradiya" className="text-decoration-none fs-4 text-dark" aria-label="Twitter">
                                     <i className="bi bi-twitter"></i>
                                 </a>
-                                <a href="https://mail.google.com/mail/?view=cm&to=ayushmoradiya01@gmail.com"  target="_blank" className="text-decoration-none fs-4 text-dark" aria-label="Email">
+                                <a href="https://mail.google.com/mail/?view=cm&to=ayushmoradiya01@gmail.com" target="_blank" className="text-decoration-none fs-4 text-dark" aria-label="Email">
                                     <i className="bi bi-envelope"></i>
                                 </a>
                             </div>
