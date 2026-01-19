@@ -1,6 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleChange = (e) => {
+    const { id, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    setSuccess(false)
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSuccess(true)
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        })
+        setTimeout(() => setSuccess(false), 5000)
+      } else {
+        setError(data.message || 'Something went wrong')
+      }
+    } catch (err) {
+      setError('Failed to send message. Please try again.')
+      console.error('Error:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <div className="contact-page">
       <section className="contact-section py-5" style={{ marginTop: '80px' }}>
@@ -75,7 +129,21 @@ const Contact = () => {
             <div className="col-lg-7">
               <div className="contact-form bg-light p-4 rounded shadow-sm">
                 <h3 className="mb-4">Send Me a Message</h3>
-                <form>
+                {success && (
+                  <div className="alert alert-success alert-dismissible fade show" role="alert">
+                    <i className="bi bi-check-circle me-2"></i>
+                    Thank you! Your message has been sent successfully. I'll get back to you soon.
+                    <button type="button" className="btn-close" onClick={() => setSuccess(false)}></button>
+                  </div>
+                )}
+                {error && (
+                  <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i className="bi bi-exclamation-circle me-2"></i>
+                    {error}
+                    <button type="button" className="btn-close" onClick={() => setError('')}></button>
+                  </div>
+                )}
+                <form onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-md-6">
                       <label htmlFor="name" className="form-label">Your Name</label>
@@ -84,6 +152,8 @@ const Contact = () => {
                         className="form-control" 
                         id="name" 
                         placeholder="John Doe"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                       />
                     </div>
@@ -94,6 +164,8 @@ const Contact = () => {
                         className="form-control" 
                         id="email" 
                         placeholder="john@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                       />
                     </div>
@@ -104,6 +176,8 @@ const Contact = () => {
                         className="form-control" 
                         id="subject" 
                         placeholder="Project Inquiry"
+                        value={formData.subject}
+                        onChange={handleChange}
                         required
                       />
                     </div>
@@ -114,13 +188,19 @@ const Contact = () => {
                         id="message" 
                         rows="5" 
                         placeholder="Your message here..."
+                        value={formData.message}
+                        onChange={handleChange}
                         required
                       ></textarea>
                     </div>
                     <div className="col-12">
-                      <button type="submit" className="btn btn-primary btn-lg px-5">
+                      <button 
+                        type="submit" 
+                        className="btn btn-primary btn-lg px-5"
+                        disabled={loading}
+                      >
                         <i className="bi bi-send me-2"></i>
-                        Send Message
+                        {loading ? 'Sending...' : 'Send Message'}
                       </button>
                     </div>
                   </div>
