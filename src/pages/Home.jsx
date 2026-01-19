@@ -24,7 +24,7 @@ const Home = () => {
                                 <Link to="/projects" className="btn btn-primary btn-lg px-4 py-2">
                                     View Projects
                                 </Link>
-                                <Link to="/Aayush_Moradiya_Resume.pdf" className="btn btn-outline-primary btn-lg px-4 py-2">
+                                <Link to="./Aayush_Moradiya_Resume.pdf" className="btn btn-outline-primary btn-lg px-4 py-2">
                                     Download Resume
                                 </Link>
                             </div>
